@@ -1,0 +1,5 @@
+0 - pass through
+1 - block
+2 - give item bomb
+3 - give item explosion
+4 - explosion (death)

@@ -1,0 +1,11 @@
+*/build/*
+!*/build/*.pbw
+node_modules/
+.vscode/settings.json
+database/
+__pycache__/
+.DS_Store
+bombleman/.lock-waf_darwin_build
+bombleman/package-lock.json
+nodeserver/package-lock.json
+bombleman/build/

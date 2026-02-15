@@ -1,0 +1,8 @@
+0 - stand down
+1 - walk down
+2 - stand left
+3 - walk left
+4 - stand up
+5 - walk up
+6 - victory
+7 - loss

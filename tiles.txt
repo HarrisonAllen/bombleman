@@ -1,0 +1,29 @@
+0 - nothing
+1 - wall
+2 - rock
+3 - broken rock
+4 - item - bomb
+5 - item - explosion
+6 - burning item
+7 - bomb
+8 - bomb - 3
+9 - bomb - 2
+10 - bomb - 1
+11 - explosion west edge
+12 - explosion west
+13 - explosion center
+14 - explosion east
+15 - explosion east edge
+16 - explosion north edge
+17 - explosion north
+18 - explosion south
+19 - explosion south edge
+20 - small explosion west edge
+21 - small explosion west
+22 - small explosion center
+23 - small explosion east
+24 - small explosion east edge
+25 - small explosion north edge
+26 - small explosion north
+27 - small explosion south
+28 - small explosion south edge

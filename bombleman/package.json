@@ -1,0 +1,51 @@
+{
+  "name": "bombleman",
+  "author": "Harrison Allen",
+  "version": "1.0.0",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "BombleMan",
+    "uuid": "a52c4a84-753f-4c0e-b1ab-868198e6b0c8",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "basalt",
+      "chalk",
+      "diorite",
+      "emery",
+      "flint"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "messageKeys": [
+      "dummy"
+    ],
+    "resources": {
+      "media": [
+        {
+          "type": "raw",
+          "name": "PLAYER_SPRITESHEET",
+          "file": "player-spritesheet.bin"
+        },
+        {
+          "type": "raw",
+          "name": "BACKGROUND_TILESHEET",
+          "file": "tilesheet.bin"
+        },
+        {
+          "type": "raw",
+          "name": "MAP",
+          "file": "ascii-map.txt"
+        },
+        {
+          "type": "raw",
+          "name": "DEFAULT_MAP",
+          "file": "map.txt"
+        }
+      ]
+    }
+  }
+}
