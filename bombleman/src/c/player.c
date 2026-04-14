@@ -1,6 +1,7 @@
 #include "player.h"
 #include "utility.h"
 #include "structs/tiles_to.h"
+#include "palettes/palettes.h"
 
 Player *Player_initialize(uint8_t number, PlayerTypes player_type, int16_t x, int16_t y, GBC_Graphics *graphics, uint8_t *map, void (*game_callback)(void *, Player *, PlayerAction), void *game) {
     Player *player = NULL;
@@ -32,6 +33,7 @@ Player *Player_initialize(uint8_t number, PlayerTypes player_type, int16_t x, in
 
     uint8_t attrs = GBC_Graphics_attr_make(0, PLAYER_VRAM, false, false, true);
     GBC_Graphics_oam_set_sprite(player->graphics, player->number, player->x, player->y, 0, attrs, PLAYER_SPRITE_WIDTH - 1, PLAYER_SPRITE_HEIGHT - 1, 0, 0);
+    GBC_Graphics_set_sprite_palette_array(player->graphics, player->number, PLAYER_PALETTES[player->number]);
     Player_show(player);
     Player_render(player);
 
@@ -190,9 +192,9 @@ void Player_step(Player *player) {
         // TODO: bug: for some reason, while invincible, the player palette changes? I think i fixed, keep an eye out
         player->invincibility_frames--;
         if (player->invincibility_frames % 2 == 0) {
-            Player_show(player);
+            GBC_Graphics_set_sprite_palette_array(player->graphics, player->number, PLAYER_PALETTES[player->number]);
         } else {
-            Player_hide(player);
+            GBC_Graphics_set_sprite_palette_array(player->graphics, player->number, PLAYER_INV_PALETTES[player->number]);
         }
     }
     if (player->logic_timer > 0) {

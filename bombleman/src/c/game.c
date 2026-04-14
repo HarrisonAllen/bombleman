@@ -119,9 +119,6 @@ void Game_start(Game *game) {
 
     // Load sprites
     GBC_Graphics_load_entire_tilesheet_into_vram(game->graphics, RESOURCE_ID_PLAYER_SPRITESHEET, 0, PLAYER_VRAM);
-    for (uint8_t i = 0; i < game->num_players; i++) {
-        GBC_Graphics_set_sprite_palette_array(game->graphics, i, PLAYER_PALETTES[i]);
-    }
 
     for (uint8_t i = 0; i < MAX_PLAYERS; i++) {
         game->players[i] = NULL;
