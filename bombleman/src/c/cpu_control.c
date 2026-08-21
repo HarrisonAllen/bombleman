@@ -2,6 +2,20 @@
 #include "structs/enums.h"
 #include "defines.h"
 
+uint8_t get_next_valid_index(int8_t *path, uint8_t path_len) {
+    // check until path = -1 -1 then return previous point
+    // assumes that start point is valid
+    int8_t path_x, path_y;
+    for (int8_t i = 1; i < path_len; i++) {
+        path_x = path[i*2];
+        path_y = path[i*2 + 1];
+        if (path_x == -1 && path_y == -1) { 
+            return i - 1;
+        }
+    }
+    return 0;
+}
+
 bool path_contains_point(int8_t x, int8_t y, int8_t *path, uint8_t path_len) {
     int8_t path_x, path_y;
     for (int8_t i = 0; i < path_len; i++) {
@@ -11,7 +25,7 @@ bool path_contains_point(int8_t x, int8_t y, int8_t *path, uint8_t path_len) {
             return true;
         }
         // Path is populated with -1s, so they'll indicate end of the path
-        if (x == -1 || y == -1) { 
+        if (path_x == -1 || path_y == -1) { 
             return false;
         }
     }

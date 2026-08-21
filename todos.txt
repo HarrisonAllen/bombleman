@@ -1,1 +1,2 @@
 * There's a bug where when a CPU tries to occupy a square that belongs to another CPU bot one or both are invincible then the cpu goes flying to the top left (presumably to 0,0)
+  * Happens when the path is one square, so cpu goes to next which is invalid... maybe need to add end to the path...?

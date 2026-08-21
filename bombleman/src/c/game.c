@@ -569,8 +569,12 @@ void Game_control_cpus(Game *game) {
             // Get the next square
             int8_t cur_x = to_square(game->players[i]->x);
             int8_t cur_y = to_square(game->players[i]->y);
-            int8_t next_x = game->cpu_paths[i][1 * 2];
-            int8_t next_y = game->cpu_paths[i][1 * 2 + 1];
+            uint8_t next_valid_idx = get_next_valid_index(game->cpu_paths[i], game->cpu_path_lens[i]);
+            if (next_valid_idx == 0) {
+                printf("Start is next valid square!!");
+            }
+            int8_t next_x = game->cpu_paths[i][next_valid_idx * 2];
+            int8_t next_y = game->cpu_paths[i][next_valid_idx * 2 + 1];
             square_is_safe = is_square_safe(next_x, next_y, game->scores, game->players[i]->invincibility_frames > 0);
             next_square_is_safer = is_next_square_safer(cur_x, cur_y, next_x, next_y, game->scores);
             bool next_square_ok = (
@@ -578,6 +582,9 @@ void Game_control_cpus(Game *game) {
                 && (next_square_is_safer || (square_is_safe && !Game_player_on_square(game, next_x, next_y)))
             );
             if (next_square_ok) {
+                if ((abs(next_x - cur_x) > 1) || (abs(next_y - cur_y) > 1)) {
+                    APP_LOG(APP_LOG_LEVEL_DEBUG, "Jumped! (%d, %d) -> (%d, %d)", cur_x, cur_y, next_x, next_y);
+                }
                 Player_walk_to_location(game->players[i], from_square(next_x), from_square(next_y), pos_delta_to_dir(next_x - cur_x, next_y - cur_y));
             } else if (game->map[next_x + next_y * SCREEN_BLOCK_WIDTH] == T_ROCK || Game_player_on_square(game, next_x, next_y)) {
                 Player_place_bomb(game->players[i]);
