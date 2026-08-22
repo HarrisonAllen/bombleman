@@ -177,7 +177,7 @@ static const uint8_t ZOOM_TABLE[] = { ///> Table for each zoom level
 #define GBC_ZOOM_MULT(x, z) ((x) << (z))
 
 /** Predefined Screen boundaries for convenience*/
-#if defined(PBL_ROUND)
+#if defined(PBL_PLATFORM_CHALK)
     #define GBC_SCREEN_BOUNDS_FULL GRect(0, 0, 180, 180)     ///> Fullscreen
     #define GBC_SCREEN_BOUNDS_LARGE GRect(2, 2, 176, 176)    ///> Largest size that maintains even number of tiles vertically and horizontally
     #define GBC_SCREEN_BOUNDS_RECT GRect(18, 6, 144, 168)    ///> Dimensions of a rectangular Pebble
@@ -190,6 +190,11 @@ static const uint8_t ZOOM_TABLE[] = { ///> Table for each zoom level
     #define SCREEN_BOUNDS_LARGE GRect(4, 2, 192, 224)    ///> Gets rid of the extra tile column on the x axis
     #define SCREEN_BOUNDS_SQUARE GRect(28, 42, 144, 144) ///> Square to get more fps
     #define SCREN_BOUNDS_SMALL GRect(36, 48, 128, 128)   ///> Small square
+#elif defined(PBL_PLATFORM_GABBRO)
+    #define SCREEN_BOUNDS_FULL GRect(0, 0, 260, 260)     ///> Fullscreen to get the most pixels
+    #define SCREEN_BOUNDS_LARGE GRect(2, 2, 256, 256)    ///> Makes it even to tiles
+    #define SCREEN_BOUNDS_SQUARE GRect(58, 58, 144, 144) ///> Square to get 60+ fps
+    #define SCREEN_BOUNDS_SMALL GRect(66, 66, 128, 128)  ///> Small square
 #else
     #define GBC_SCREEN_BOUNDS_FULL GRect(0, 0, 144, 168)    ///> Fullscreen
     #define GBC_SCREEN_BOUNDS_LARGE GRect(0, 4, 144, 160)   ///> Largest size that maintains even number of tiles vertically and horizontally
