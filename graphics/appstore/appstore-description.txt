@@ -30,4 +30,4 @@ CPUs:
 
 ------
 
-I'm releasing this as a demo to free BombleMan from the void, you can check out more details on the github page for how I made things like the CPUs work and what my future plans are: https://github.com/HarrisonAllen/bombleman
+I'm releasing this as a demo to free BombleMan from the void (it's been there for a very long time). You can check out more details on the github page for how I made things like the CPUs work and what my future plans are: https://github.com/HarrisonAllen/bombleman

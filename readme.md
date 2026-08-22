@@ -2,7 +2,7 @@
 
 ![bombleman banner](https://github.com/HarrisonAllen/bombleman/blob/0111c5f0df60b17afda09b639eb5dd1c61465b05/graphics/appstore/banner.png?raw=true)
 
-Bomberman clone for the Pebble smartwatch, just a tech demo for now. I have larger ambitions to connect with Pebble Land for multiplayer but I figured that it's more valuable to put the demo out than let it rot in the void forever.
+Bomberman clone for the Pebble smartwatch, just a tech demo for now. I figured that it's more valuable to put the demo out than let it continue rot in the void forever. There are still [plans for the future](#multiplayer-plans)!
 
 That does mean that this codebase is a huge mess! Tread with caution!
 
