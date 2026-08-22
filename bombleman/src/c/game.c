@@ -476,17 +476,14 @@ bool Game_player_on_square(Game *game, int8_t x, int8_t y) {
 
 void Game_control_cpus(Game *game) {
     // TODO: based on CPU personality, pick a target
-    // PT_HUMAN
-    // PT_COWARD: Safest square
-    // PT_HUNTER: Closest player
-    // PT_LAZY: Farthest player?
-    // PT_HOARDER: Closest item
-    // PT_DEMO: Closest rock
-    // PT_FRIEND: Closest CPU
-    // PT_SMART: Choosed closest by path core, items & players
-
-    // Note: right now I'm only calculating the player 2 path
-    // If square < safety threshold, path to safest square nearby 5x5?
+    // PT_HUMAN, // Me and you
+    // PT_COWARD, // Prioritize safety
+    // PT_HUNTER, // Prioritize humans
+    // PT_LAZY, // Takes longer to think
+    // PT_HOARDER, // Prioritizes items
+    // PT_DEMO, // Prioritizes rocks
+    // PT_FRIEND, // Prioritizes CPUs
+    // PT_SMART, // Prioritizes by path score: items, players
 
     uint8_t target_squares[MAX_PLAYERS][2];
     int8_t closest_player;
@@ -569,17 +566,20 @@ void Game_control_cpus(Game *game) {
             // Get the next square
             int8_t cur_x = to_square(game->players[i]->x);
             int8_t cur_y = to_square(game->players[i]->y);
-            uint8_t next_valid_idx = get_next_valid_index(game->cpu_paths[i], game->cpu_path_lens[i]);
-            if (next_valid_idx == 0) {
-                printf("Start is next valid square!!");
-            }
-            int8_t next_x = game->cpu_paths[i][next_valid_idx * 2];
-            int8_t next_y = game->cpu_paths[i][next_valid_idx * 2 + 1];
+            int8_t next_x = game->cpu_paths[i][1 * 2];
+            int8_t next_y = game->cpu_paths[i][1 * 2 + 1];
+            // uint8_t next_valid_idx = get_next_valid_index(game->cpu_paths[i], game->cpu_path_lens[i]);
+            // if (next_valid_idx == 0) {
+            //     printf("Start is next valid square!!");
+            // }
+            // int8_t next_x = game->cpu_paths[i][next_valid_idx * 2];
+            // int8_t next_y = game->cpu_paths[i][next_valid_idx * 2 + 1];
             square_is_safe = is_square_safe(next_x, next_y, game->scores, game->players[i]->invincibility_frames > 0);
             next_square_is_safer = is_next_square_safer(cur_x, cur_y, next_x, next_y, game->scores);
             bool next_square_ok = (
                 !is_square_blocking(next_x, next_y, game->map, game->players[i]->invincibility_frames > 0)
                 && (next_square_is_safer || (square_is_safe && !Game_player_on_square(game, next_x, next_y)))
+                && ((next_x != -1) && (next_y != -1))
             );
             if (next_square_ok) {
                 if ((abs(next_x - cur_x) > 1) || (abs(next_y - cur_y) > 1)) {
