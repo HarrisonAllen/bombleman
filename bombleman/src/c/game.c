@@ -4,6 +4,8 @@
 #include "structs/tiles_to.h"
 #include "cpu_control.h"
 
+static int8_t map_choice = -1;
+
 Game *Game_init(GBC_Graphics *graphics, Window *window, GameTypes game_type, uint8_t num_players, uint8_t num_humans) {
     Game *game = NULL;
     game = malloc(sizeof(Game));
@@ -17,7 +19,15 @@ Game *Game_init(GBC_Graphics *graphics, Window *window, GameTypes game_type, uin
     game->path_tick = 0;
     memset(game->map, T_WALL, SCREEN_BLOCK_SIZE);
     memset(game->player_spawns, 1, sizeof(game->player_spawns));
-    load_map(game->map, RESOURCE_ID_MAP, SCREEN_BLOCK_WIDTH-2, SCREEN_BLOCK_HEIGHT-2, 1, 1, game->player_spawns);
+    if (map_choice == -1)
+    {
+        map_choice = rand() % NUM_MAPS;
+    }
+    else
+    {
+        map_choice = (map_choice + 1) % NUM_MAPS;
+    }
+    load_map(game->map, START_MAP + map_choice, SCREEN_BLOCK_WIDTH-2, SCREEN_BLOCK_HEIGHT-2, 1, 1, game->player_spawns);
     memset(game->scores, SCORE_NULL, sizeof(game->scores));
     return game;
 }

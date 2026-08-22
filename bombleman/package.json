@@ -37,8 +37,23 @@
         },
         {
           "type": "raw",
-          "name": "MAP",
+          "name": "MAP1",
           "file": "map.txt"
+        },
+        {
+          "type": "raw",
+          "name": "MAP2",
+          "file": "mr-pizza-boy-map.txt"
+        },
+        {
+          "type": "raw",
+          "name": "MAP3",
+          "file": "mr-pizza-boy-map-2.txt"
+        },
+        {
+          "type": "raw",
+          "name": "MAP4",
+          "file": "map-no-rocks.txt"
         }
       ]
     }

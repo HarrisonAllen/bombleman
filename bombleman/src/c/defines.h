@@ -113,3 +113,7 @@ extern const int16_t PLAYER_SPAWNS[MAX_PLAYERS][2];
 const int8_t X_Y_DIRS[NUM_DIRS+1][2];
 const int8_t X_Y_MULTS[NUM_DIRS][2];
 const uint8_t PATH_ORDERS[NUM_DIRS][NUM_DIRS];
+
+// Maps
+#define NUM_MAPS 3
+#define START_MAP RESOURCE_ID_MAP1
