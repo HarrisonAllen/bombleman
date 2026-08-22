@@ -38,11 +38,6 @@
         {
           "type": "raw",
           "name": "MAP",
-          "file": "ascii-map.txt"
-        },
-        {
-          "type": "raw",
-          "name": "DEFAULT_MAP",
           "file": "map.txt"
         }
       ]
