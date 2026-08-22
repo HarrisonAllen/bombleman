@@ -27,6 +27,12 @@
     "resources": {
       "media": [
         {
+          "type": "bitmap",
+          "name": "MENU_ICON",
+          "file": "app-icon.png",
+          "menuIcon": true
+        },
+        {
           "type": "raw",
           "name": "PLAYER_SPRITESHEET",
           "file": "player-spritesheet.bin"
