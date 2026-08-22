@@ -8,7 +8,7 @@ That does mean that this codebase is a huge mess! Tread with caution!
 
 App store links:
 
-* [Rebble Store](link)
+* [Rebble Store](https://apps.rebble.io/en_US/application/6a89368b6a9b270009227f6b)
 * [Repebble Store](link)
 * .pbw: `graphics/appstore/bombleman.pbw`
 
