@@ -1,5 +1,7 @@
 # BombleMan
 
+![bombleman banner](https://github.com/HarrisonAllen/bombleman/blob/0111c5f0df60b17afda09b639eb5dd1c61465b05/graphics/appstore/banner.png?raw=true)
+
 Bomberman clone for the Pebble smartwatch, just a tech demo for now. I have larger ambitions to connect with Pebble Land for multiplayer but I figured that it's more valuable to put the demo out than let it rot in the void forever.
 
 That does mean that this codebase is a huge mess! Tread with caution!
@@ -8,7 +10,7 @@ App store links:
 
 * [Rebble Store](link)
 * [Repebble Store](link)
-* [PBW](link)
+* .pbw: `graphics/appstore/bombleman.pbw`
 
 # Table of Contents
 

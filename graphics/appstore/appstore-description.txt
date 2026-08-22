@@ -1,0 +1,33 @@
+BombleMan is a Bomberman clone for (most) Pebbles!
+
+Face off against 3 CPUs across 3 levels to become the ultimate "Bombler"!
+
+To play:
+
+* Select to move
+
+* Up/Down to turn
+
+* Back to place a bomb
+
+* Hold back to exit
+
+Powerups:
+
+* More bombs
+
+* Bigger explosion
+
+* Invulnerability
+
+CPUs:
+
+* Hunter (gray): goes after YOU
+
+* Friend (blue): goes after CPUs
+
+* Hoarder (red): goes for powerups
+
+------
+
+I'm releasing this as a demo to free BombleMan from the void, you can check out more details on the github page for how I made things like the CPUs work and what my future plans are: https://github.com/HarrisonAllen/bombleman
