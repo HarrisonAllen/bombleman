@@ -184,11 +184,11 @@ If the CPU can't find a special path, it will just target to the closest player
 * **Hunter**: prioritizes the nearest Human (player 2 - gray)
 * **Friend**: prioritizes the nearest CPU (player 3 - blue)
 * **Hoarder**: prioritizes the nearest item (player 4 - red)
+* **Lazy**: takes longer to think (not used at this time)
 
 ### Not yet implemented
 
 * **Coward**: prioritizes the safest square
-* **Lazy**: takes longer to think
 * **Demolitionist**: prioritizes rocks
 * **Smart**: chooses between items and players based on best path
 
