@@ -37,11 +37,12 @@ App store links:
 
 ### Powerups
 
-![powerup tiles](https://github.com/HarrisonAllen/bombleman/blob/75daa13d3d8ce225a3e4ac2c695e79b09465bc8f/graphics/sprites/powerups.png?raw=true)
+![powerup tiles](https://github.com/HarrisonAllen/bombleman/blob/b04541945ea00003cd34c096c52c32c8553bf185/graphics/sprites/powerups.png?raw=true)
 
 * **Bomb** - Increases number of bombs
 * **Explosion** - Increases explosion radius
 * **Invincibility** - Temporarily become invincible
+* **Kick** - Kick bombs forward
 
 # Sprites
 

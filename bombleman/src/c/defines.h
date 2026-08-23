@@ -104,7 +104,7 @@ extern const int16_t PLAYER_SPAWNS[MAX_PLAYERS][2];
 #define ITEM_TICK_LIFETIME EXPL_TICK_LIFETIME
 #define ITEM_FADE_START (1 * FRAMERATE)
 #define MAX_ITEMS_PER_GAME (SCREEN_BLOCK_SIZE / 2)
-#define NUM_ITEMS 3 // Exclude kick and power
+#define NUM_ITEMS 4 // Exclude power
 #define ITEM_SPAWN_RANGE (NUM_ITEMS * 3)
 #define ITEM_SHIELD_INVULN_FRAMES (20 * FRAMERATE)
 
